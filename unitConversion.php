@@ -11,41 +11,8 @@
     <title>Kalkulator Online</title>
   </head>
   <body>
-    <!--Sidebar Start  -->
-    <div class="sidebar">
-      <a href="#" class="logo">
-        <i class="bx bx-math"></i>
-        <div class="logo-name"><span>Calc</span>Online</div>
-      </a>
-      <ul class="side-menu">
-        <li>
-          <a href="index.html"><i class="bx bx-calculator"></i>Calculator</a>
-        </li>
-        <li class="active">
-          <a href="conversion.html"
-            ><i class="bx bx-analyse"></i>Unit Converstion</a
-          >
-        </li>
-        <li>
-          <a href="#"><i class="bx bx-money-withdraw"></i>Finance Calc</a>
-        </li>
-        <li>
-          <a href="#"><i class="bx bx-group"></i>user</a>
-        </li>
-        <li>
-          <a href="#"><i class="bx bx-cog"></i>Setting</a>
-        </li>
-      </ul>
-      <ul class="side-menu">
-        <li>
-          <a href="#" class="logout">
-            <i class="bx bx-log-out-circle"></i>
-            Logout
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!-- Sidebar End -->
+  <!-- Navbar -->
+  <?php include "layout/navbar.php" ?>
 
     <!-- Main Content Start -->
     <div class="content">
