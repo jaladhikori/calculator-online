@@ -1,7 +1,7 @@
 <?php
-//require_once 'database.php';
+require_once 'database.php';
 
-//session_check(true);
+session_check(true);
 
 ?>
 <!DOCTYPE html>
@@ -26,9 +26,17 @@
         <p>Get the ease of calculating anything</p>
         <p>from the source of calculator online</p>
       </div>
-      <form action="#">
-        <input type="text" placeholder="Username" required>
-        <input type="password" placeholder="Password" required>
+      <form action="validasi.php" method="post">
+        <div class="alert">
+          <?php
+          if (isset($_SESSION['alert'])) {
+            echo $_SESSION['alert'];
+            unset($_SESSION['alert']);
+          }
+          ?>
+        </div>
+        <input type="text" name="username" placeholder="Username" autofocus required>
+        <input type="password" name="password" placeholder="Password" required>
         <div class="link">
           <button type="submit" class="login">Login</button>
           <a href="#" class="forgot">Forgot password?</a>
@@ -40,88 +48,6 @@
       </form>
     </div>
   </div>
-
-
-
-
-
-  <!-- <div class="wrapper">
-    <span class="icon-close">
-      <i class="bx bx-x"></i>
-    </span>
-    <div class="form-box login">
-      <h2>Login</h2>
-      <form action="#">
-        <div class="input-box">
-          <span class="icon">
-            <i class="bx bx-envelope"></i>
-          </span>
-          <input type="text" required />
-          <label>Email</label>
-        </div>
-        <div class="input-box">
-          <span class="icon">
-            <i class="bx bx-lock-alt"></i>
-          </span>
-          <input type="password" required />
-          <label>Password</label>
-        </div>
-        <div class="remember-forgot">
-          <label><input type="checkbox" />Remember me</label>
-          <a href="#">Forgot Password?</a>
-        </div>
-        <button type="submit" class="btn">Login</button>
-        <div class="login-register">
-          <p>
-            Don't have an account?
-            <a href="#" class="register-link">Register</a>
-          </p>
-        </div>
-      </form>
-    </div>
-
-    <div class="form-box register">
-      <h2>Registration</h2>
-      <form action="#">
-        <div class="input-box">
-          <span class="icon">
-            <i class="bx bx-user"></i>
-          </span>
-          <input type="text" required />
-          <label>Username</label>
-        </div>
-        <div class="input-box">
-          <span class="icon">
-            <i class="bx bx-envelope"></i>
-          </span>
-          <input type="text" required />
-          <label>Email</label>
-        </div>
-        <div class="input-box">
-          <span class="icon">
-            <i class="bx bx-lock-alt"></i>
-          </span>
-          <input type="password" required />
-          <label>Password</label>
-        </div>
-        <div class="remember-forgot">
-          <label><input type="checkbox" />I agree to the terms & conditions</label>
-        </div>
-        <button type="submit" class="btn">Register</button>
-        <div class="login-register">
-          <p>
-            Already have an account?
-            <a href="#" class="login-link">Login</a>
-          </p>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <p>teastetetetettete</p>
-  <P>ococaoa</P>
-  <P>test cobakkkka</P>
-  <script src="assets/script.js"></script> -->
 </body>
 
 </html>

@@ -1,5 +1,8 @@
 <?php
 
+require_once('database.php');
+session_check();
+
 ?>
 
 <!DOCTYPE html>

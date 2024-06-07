@@ -162,7 +162,8 @@ form input:focus {
   gap: 15px;
 }
 
-.link .login {
+.link .login,
+.link .register {
   border: none;
   outline: none;
   cursor: pointer;
