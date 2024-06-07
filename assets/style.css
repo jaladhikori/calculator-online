@@ -40,69 +40,59 @@ body {
   overflow-x: hidden;
 }
 
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: var(--light);
-  width: 230px;
-  height: 100%;
-  z-index: 2000;
-  overflow-x: hidden;
-  scrollbar-width: none;
-  transition: all 0.3s ease;
-}
-
-
-.sidebar .logo .bx {
-  min-width: 60px;
+  list-style: none;
   display: flex;
-  justify-content: center;
-  font-size: 2.2rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
-
-
-
-
-/* Sidebar Start */
-
-
-.sidebar::-webkit-scrollbar {
-  display: none;
-}
-
-.sidebar.close {
-  width: 60px;
-}
-
-.sidebar .logo {
+.navbar .logo {
   font-size: 24px;
   font-weight: 700;
   height: 56px;
   display: flex;
   align-items: center;
   color: var(--primary);
-  z-index: 500;
-  padding-bottom: 20px;
-  box-sizing: content-box;
 }
 
-.sidebar .logo .logo-name span {
-  color: var(--dark);
-}
-
-.sidebar .logo .bx {
+.navbar .logo .bx {
   min-width: 60px;
   display: flex;
   justify-content: center;
-  font-size: 2.2rem;
+  font-size: 3rem;
 }
 
-.sidebar .side-menu {
-  width: 100%;
-  margin-top: 48px;
+.navbar .logo span {
+  color: var(--dark);
 }
+
+.navbar .menu {
+  display: flex;
+  gap: 2rem;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.navbar .menu li {
+}
+
+.navbar .menu .bx {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar .menu-right {
+  display: flex;
+}
+/* Sidebar Start */
 
 .sidebar .side-menu li {
   height: 48px;
@@ -175,4 +165,3 @@ body {
   color: var(--danger);
 }
 /* Sidebar End */
-
