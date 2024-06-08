@@ -1,8 +1,11 @@
 <?php
 
+require_once 'database.php';
+session_check();
+
 $currentValue = 0;
 
-$input = [];
+$input = [0];
 
 
 function getInputAsString($values)
@@ -65,13 +68,10 @@ function calculateInput($userInput)
   return $current;
 }
 
-
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
   if (isset($_POST['input'])) {
     $input = json_decode($_POST['input']);
   }
-
-
 
   if (isset($_POST)) {
     foreach ($_POST as $key => $value) {
