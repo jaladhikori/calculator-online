@@ -26,7 +26,7 @@ session_check();
     </div>
 
     <div class="main-container">
-        <h3>Loan Interest Calculator</h3>
+        <h3>Amortization Calculator</h3>
         <form action="" method="post">
             <label for="loan_amount">Loan Amount:</label>
             <input type="text" id="loan_amount" name="loan_amount" required><br><br>
@@ -41,7 +41,7 @@ session_check();
 
 
             <?php
-            function calculate_loan($loan_amount, $annual_interest_rate, $loan_term)
+            function calculate_amortization($loan_amount, $annual_interest_rate, $loan_term)
             {
                 $monthly_interest_rate = $annual_interest_rate / 100 / 12;
                 $number_of_payments = $loan_term * 12;
@@ -52,10 +52,27 @@ session_check();
                     $monthly_payment = $loan_amount / $number_of_payments;
                 }
 
+                $schedule = [];
+                $balance = $loan_amount;
+
+                for ($month = 1; $month <= $number_of_payments; $month++) {
+                    $interest_payment = $balance * $monthly_interest_rate;
+                    $principal_payment = $monthly_payment - $interest_payment;
+                    $balance -= $principal_payment;
+
+                    $schedule[] = [
+                        'month' => $month,
+                        'payment' => $monthly_payment,
+                        'principal' => $principal_payment,
+                        'interest' => $interest_payment,
+                        'balance' => $balance
+                    ];
+                }
+
                 $total_payment = $monthly_payment * $number_of_payments;
                 $total_interest = $total_payment - $loan_amount;
 
-                return array($monthly_payment, $total_payment, $total_interest);
+                return array($monthly_payment, $total_payment, $total_interest, $schedule);
             }
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -64,11 +81,25 @@ session_check();
                 $loan_term = $_POST['loan_term'];
 
                 if (is_numeric($loan_amount) && is_numeric($annual_interest_rate) && is_numeric($loan_term)) {
-                    list($monthly_payment, $total_payment, $total_interest) = calculate_loan($loan_amount, $annual_interest_rate, $loan_term);
+                    list($monthly_payment, $total_payment, $total_interest, $schedule) = calculate_amortization($loan_amount, $annual_interest_rate, $loan_term);
                     echo "<h3>Loan Details</h3>";
                     echo "<p>Monthly Payment: Rp" . number_format($monthly_payment, 2) . "</p>";
                     echo "<p>Total Payment: Rp" . number_format($total_payment, 2) . "</p>";
                     echo "<p>Total Interest: Rp" . number_format($total_interest, 2) . "</p>";
+
+                    echo "<h3>Amortization Schedule</h3>";
+                    echo "<table border='1'>";
+                    echo "<tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr>";
+                    foreach ($schedule as $payment) {
+                        echo "<tr>";
+                        echo "<td>" . $payment['month'] . "</td>";
+                        echo "<td>" . number_format($payment['payment'], 2) . "</td>";
+                        echo "<td>" . number_format($payment['principal'], 2) . "</td>";
+                        echo "<td>" . number_format($payment['interest'], 2) . "</td>";
+                        echo "<td>" . number_format($payment['balance'], 2) . "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
                 } else {
                     echo "<h3>Error</h3>";
                     echo "<p>Please enter valid numeric values.</p>";
@@ -77,8 +108,6 @@ session_check();
             ?>
         </form>
     </div>
-
-
     <script src="assets/script.js"></script>
 </body>
 

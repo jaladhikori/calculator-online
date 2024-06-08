@@ -24,7 +24,7 @@ session_check();
     </div>
 
     <div class="main-container">
-        <h2>Temperature Converter</h2>
+        <h3>Temperature Converter</h3>
         <form action="" method="post">
             <label for="value">Value:</label>
             <input type="text" id="value" name="value" required><br><br>

@@ -352,6 +352,7 @@ input[type="submit"][value="Calculate"] {
   text-align: center;
   padding: 2rem;
   border-radius: 15px;
+  width: 300px;
   border: 2px solid transparent;
   transition: all 0.3s ease;
 }

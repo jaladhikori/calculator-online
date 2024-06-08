@@ -27,19 +27,19 @@ session_check();
 
     <div class="card">
         <a href="loanInterest.php" class="card-info">
-            <i class='bx bx-ruler'></i>
+            <i class='bx bxs-bank'></i>
             <h4>Loan Interest</h4>
         </a>
-        <a href="weightConversion.php" class="card-info">
-            <i class='bx bxs-inbox bx-rotate-180'></i>
-            <h4>Weight Conversion</h4>
+        <a href="amortizationCalculator.php" class="card-info">
+            <i class='bx bx-money-withdraw'></i>
+            <h4>Amortization Calculator</h4>
         </a>
-        <a href="temperatureConversion.php" class="card-info">
-            <i class='bx bxs-thermometer'></i>
-            <h4>Temperature Conversion</h4>
+        <a href="investmentCalculator.php" class="card-info">
+            <i class='bx bx-wallet'></i>
+            <h4>Investment Calculator</h4>
         </a>
-
-        <script src="assets/script.js"></script>
+    </div>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>

@@ -35,7 +35,8 @@ session_check();
       <i class='bx bxs-thermometer'></i>
       <h4>Temperature Conversion</h4>
     </a>
-    <script src="assets/script.js"></script>
+  </div>
+  <script src="assets/script.js"></script>
 </body>
 
 </html>
