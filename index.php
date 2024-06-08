@@ -1,8 +1,5 @@
 <?php
 
-require_once('database.php');
-session_check();
-
 $currentValue = 0;
 
 $input = [];
@@ -115,43 +112,51 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   <!-- Navbar -->
   <?php include "layout/navbar.php" ?>
 
+  <!-- Header -->
+  <div class="header">
+    <h3>Calculator</h3>
+  </div>
 
-  <div class="main-calc">
-    <h3>My Calculator</h3>
+  <div class="main-calc" style="border: 1px solid #ccc; border-radius: 3px; padding: 5px; display: inline-block">
     <div class="calc">
       <form class="calcu" method="post">
-        <input type="hidden" value name="input" value='<?php echo json_encode($input); ?>' />
-        <p><?php echo getInputAsString($input); ?></p>
+        <input type="hidden" name="input" value='<?php echo json_encode($input); ?>' />
+        <p style="padding: 3px; margin: 0; min-height: 20px;"><?php echo getInputAsString($input); ?></p>
         <input type="text" value="<?php echo $currentValue; ?>" />
         <table>
           <tr>
-            <td><input class="calcu" type="submit" name="ce" value="CE" /></td>
-            <td><input class="calcu" type="submit" name="c" value="C" /></td>
-            <td><button class="calcu" type="submit" name="back" value="back">&#8592;</button></td>
-            <td><button class="calcu" type="submit" name="divide" value="/">&#247;</button></td>
+            <td><input type="submit" name="ce" value="CE" /></td>
+            <td><input type="submit" name="c" value="C" /></td>
+            <td><button type="submit" name="back" value="back">&#8592;</button></td>
+            <td><button type="submit" name="divide" value="/">&#247;</button></td>
+            <td><input type="submit" name="sin" value="sin"></td>
           </tr>
           <tr>
             <td><input type="submit" name="7" value="7" /></td>
             <td><input type="submit" name="8" value="8" /></td>
             <td><input type="submit" name="9" value="9" /></td>
             <td><input type="submit" name="multiply" value="x" /></td>
+            <td><input type="submit" name="cos" value="cos"></td>
           </tr>
           <tr>
             <td><input type="submit" name="4" value="4" /></td>
             <td><input type="submit" name="5" value="5" /></td>
             <td><input type="submit" name="6" value="6" /></td>
             <td><input type="submit" name="minus" value="-" /></td>
+            <td><input type="submit" name="tan" value="tan"></td>
           </tr>
           <tr>
             <td><input type="submit" name="1" value="1" /></td>
             <td><input type="submit" name="2" value="2" /></td>
             <td><input type="submit" name="3" value="3" /></td>
             <td><input type="submit" name="add" value="+" /></td>
+            <td><input type="submit" name="sqrt" value="sqrt"></td>
           </tr>
           <tr>
-            <td><button type="submit" name="plusminus" value="plusminus">&#177;</button></td>
+            <td><input type="submit" name="percent" value="%"></td>
             <td><input type="submit" name="zero" value="0" /></td>
             <td><input type="submit" name="." value="." /></td>
+            <td><input type="submit" name="log" value="log"></td>
             <td><input type="submit" name="equal" value="=" /></td>
           </tr>
         </table>
@@ -159,70 +164,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </div>
   </div>
 
-  <div class="calculator">
-    <form method="post" action="">
-      <table>
-        <tr>
-          <td colspan="4">
-            <input type="text" name="display" id="display" value="<?php echo isset($_POST['display']) ? htmlspecialchars($_POST['display']) : '0'; ?>" disabled>
-            <input type="hidden" name="hidden_display" value="<?php echo isset($_POST['display']) ? htmlspecialchars($_POST['display']) : '0'; ?>">
-          </td>
-        </tr>
-        <tr>
-          <td><input type="submit" name="btn" value="7"></td>
-          <td><input type="submit" name="btn" value="8"></td>
-          <td><input type="submit" name="btn" value="9"></td>
-          <td><input type="submit" name="btn" value="/"></td>
-        </tr>
-        <tr>
-          <td><input type="submit" name="btn" value="4"></td>
-          <td><input type="submit" name="btn" value="5"></td>
-          <td><input type="submit" name="btn" value="6"></td>
-          <td><input type="submit" name="btn" value="*"></td>
-        </tr>
-        <tr>
-          <td><input type="submit" name="btn" value="1"></td>
-          <td><input type="submit" name="btn" value="2"></td>
-          <td><input type="submit" name="btn" value="3"></td>
-          <td><input type="submit" name="btn" value="-"></td>
-        </tr>
-        <tr>
-          <td><input type="submit" name="btn" value="0"></td>
-          <td><input type="submit" name="btn" value="."></td>
-          <td><input type="submit" name="btn" value="C"></td>
-          <td><input type="submit" name="btn" value="+"></td>
-        </tr>
-        <tr>
-          <td colspan="4"><input type="submit" name="btn" value="="></td>
-        </tr>
-      </table>
-    </form>
-  </div>
-  <?php
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $display = $_POST['hidden_display'];
-    $button = $_POST['btn'];
 
-    if ($button == "C") {
-      $display = "0";
-    } elseif ($button == "=") {
-      try {
-        $result = eval("return $display;");
-        $display = $result;
-      } catch (Exception $e) {
-        $display = "Error";
-      }
-    } else {
-      if ($display == "0" || $display == "Error") {
-        $display = $button;
-      } else {
-        $display .= $button;
-      }
-    }
+  <td><input type="submit" name="btn" value="ln"></td>
 
-    echo '<script>document.getElementById("display").value = "' . htmlspecialchars($display) . '";</script>';
-  }
-  ?>
+
+
+
 
   <script src="assets/script.js"></script>
 </body>

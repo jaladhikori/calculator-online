@@ -7,6 +7,7 @@ session_check();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,37 +20,26 @@ session_check();
     <!-- Navbar -->
     <?php include "layout/navbar.php" ?>
 
-    <!-- Main Content Start -->
-    <div class="content">
-        <!-- Navbar Start -->
-        <nav>
-            <i class="bx bx-menu"></i>
-            <input type="checkbox" id="theme-toggle" hidden />
-            <label for="theme-toggle" class="theme-toggle"></label>
-            <a href="#" class="profile">
-                <img src="images/logo.png" />
-            </a>
-        </nav>
-        <!-- Navbar End -->
-        <main>
-            <!-- Header Start -->
-            <div class="header">
-                <div class>
-                    <h1>Calculator</h1>
-                    <ul class="breadcrumb">
-                        <li><a href="#">Standar</a></li>
-                        /
-                        <li><a href="#" class="active">Scientific</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Header End -->
-            <!-- Calculator End -->
-        </main>
+    <!-- Header -->
+    <div class="header">
+        <h3>Finance Calculator</h3>
     </div>
-    <!-- Main Content End -->
 
-    <script src="assets/script.js"></script>
+    <div class="card">
+        <a href="loanInterest.php" class="card-info">
+            <i class='bx bx-ruler'></i>
+            <h4>Loan Interest</h4>
+        </a>
+        <a href="weightConversion.php" class="card-info">
+            <i class='bx bxs-inbox bx-rotate-180'></i>
+            <h4>Weight Conversion</h4>
+        </a>
+        <a href="temperatureConversion.php" class="card-info">
+            <i class='bx bxs-thermometer'></i>
+            <h4>Temperature Conversion</h4>
+        </a>
+
+        <script src="assets/script.js"></script>
 </body>
 
 </html>

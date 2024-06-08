@@ -223,6 +223,19 @@ hr {
   background: var(--primary);
 }
 
+.header {
+  padding: 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--dark);
+}
+
+.header h3 {
+  color: var(--light);
+  font-weight: 600;
+}
+
 .main-calc {
   padding-top: 20px;
   gap: 20px;
@@ -239,11 +252,13 @@ hr {
   border: 1px solid var(--primary);
   border-radius: 24px;
   padding: 1rem;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   background: var(--light);
 }
 
-.calcu {
+.calcu button {
+  height: 50px;
 }
 .calculator {
   display: flex;
@@ -257,37 +272,38 @@ hr {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#display {
+button[type="submit"] {
+  height: 55px;
   width: 100%;
-  padding: 10px;
-  font-size: 2em;
-  text-align: right;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  background-color: #f9f9f9;
+  border: 1px solid var(--secondary);
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  padding: 0 14px;
 }
 
-table {
-  width: 100%;
-}
-
-td {
-  padding: 5px;
+button[type="submit"]:hover {
+  background-color: var(--primary);
+  color: var(--light);
 }
 
 input[type="submit"] {
   width: 100%;
-  padding: 20px;
   font-size: 1.5em;
-  border-radius: 5px;
   border: 1px solid #ccc;
   cursor: pointer;
+  height: 55px;
+  width: 70px;
+  border: 1px solid var(--secondary);
+  border-radius: 6px;
+  margin-bottom: 15px;
+  padding: 0 14px;
   transition: background-color 0.2s;
 }
 
 input[type="submit"]:hover {
-  background-color: #d0d0d0;
+  background-color: var(--primary);
+  color: var(--light);
 }
 
 input[name="btn"][value="="] {
@@ -298,4 +314,56 @@ input[name="btn"][value="="] {
 input[name="btn"][value="C"] {
   background-color: #ff3b30;
   color: #fff;
+}
+
+.main-container {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-container h3 {
+  color: var(--primary);
+  text-align: center;
+}
+
+.main-container p {
+  text-align: center;
+}
+
+input[type="submit"][value="Convert"],
+input[type="submit"][value="Calculate"] {
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 5rem;
+  gap: 50px;
+}
+
+.card .card-info {
+  background-color: var(--light);
+  color: var(--primary);
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.card .card-info .bx {
+  font-size: 5rem;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.card .card-info:hover {
+  background-color: #f1f2f6;
+  border-color: var(--primary);
+  color: var(--secondary);
 }
