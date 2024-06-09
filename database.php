@@ -23,7 +23,7 @@ function session_check($login = false)
     }
   } else {
     if (!isset($_SESSION['username'])) {
-      $_SESSION['alert'] = 'Login terlebih dahulu!';
+      $_SESSION['alert'] = 'You Must Login First';
       header('Location: login.php');
       exit;
     }

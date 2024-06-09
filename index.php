@@ -164,13 +164,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </div>
   </div>
 
-
-  <td><input type="submit" name="btn" value="ln"></td>
-
-
-
-
-
   <script src="assets/script.js"></script>
 </body>
 

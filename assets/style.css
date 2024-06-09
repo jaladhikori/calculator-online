@@ -63,6 +63,10 @@ nav .logo span,
   color: var(--dark);
 }
 
+nav .menu ul li:hover a {
+  color: var(--secondary);
+}
+
 nav .menu ul {
   display: flex;
   gap: 3.4rem;
@@ -75,6 +79,7 @@ nav .menu ul li a {
   align-items: center;
   color: var(--primary);
   gap: 0.2rem;
+  transition: color 0.1 ease;
 }
 
 nav .menu-right ul {
@@ -84,10 +89,20 @@ nav .menu-right ul {
 
 nav .menu-right li a {
   color: var(--primary);
+  transition: color 0.3 ease;
 }
 
-nav .menu-right a .bx-log-out {
+nav .menu-right li a .bx:hover {
+  font-size: 2.5rem;
+}
+
+nav .menu-right li .logout {
   color: var(--danger);
+}
+
+nav .menu-right li .logout .bx:hover {
+  color: var(--danger);
+  font-size: 2.5rem;
 }
 
 .flex {

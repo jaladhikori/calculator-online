@@ -19,7 +19,7 @@ if ($result->num_rows === 1) {
     }
 }
 
-$_SESSION['alert'] = 'Username / Password Salah!';
+$_SESSION['alert'] = 'Wrong Username / Password!';
 
 header('Location: login.php');
 exit;

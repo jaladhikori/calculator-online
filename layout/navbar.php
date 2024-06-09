@@ -13,7 +13,7 @@
   <div class="menu-right">
     <ul>
       <li><a href="user.php"><i class="bx bx-group"></i></a></li>
-      <li><a href="logout.php"><i class="bx bx-log-out-circle"></i></a></li>
+      <li><a href="logout.php" class="logout"><i class="bx bx-log-out-circle"></i></a></li>
     </ul>
   </div>
 </nav>

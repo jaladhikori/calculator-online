@@ -1,7 +1,7 @@
 <?php
 
 require_once('database.php');
-session_check();
+session_start();
 
 
 $user_id = $_SESSION['id'];
