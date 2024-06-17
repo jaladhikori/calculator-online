@@ -163,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       </form>
     </div>
   </div>
-
+  <?php include "layout/footer.php" ?>
   <script src="assets/script.js"></script>
 </body>
 

@@ -93,7 +93,7 @@ nav .menu-right li a {
 }
 
 nav .menu-right li a .bx:hover {
-  font-size: 2.5rem;
+  color: var(--secondary);
 }
 
 nav .menu-right li .logout {
@@ -101,13 +101,55 @@ nav .menu-right li .logout {
 }
 
 nav .menu-right li .logout .bx:hover {
-  color: var(--danger);
-  font-size: 2.5rem;
+  color: var(--secondary);
 }
 
-.flex {
+footer {
+  background: var(--dark);
+  padding: 50px 65px;
+}
+
+footer .cols {
   display: flex;
-  align-items: center;
+  align-items: start;
+  justify-content: center;
+}
+
+footer .cols .about-col {
+  flex: 1;
+}
+
+footer .cols .about-col h3 {
+  color: var(--light);
+  margin-bottom: 20px;
+}
+
+footer .cols .about-col p {
+  color: #ccc;
+  font-size: 13px;
+}
+
+footer .cols .links-col {
+  flex: 1;
+}
+
+footer .cols .links-col h4,
+footer .cols .news-col h4 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+footer .cols .links-col a {
+  display: block;
+  text-decoration: none;
+  color: #7b7b7b;
+  font-size: 14px;
+  line-height: 26px;
+  transition: color 0.3s ease;
+}
+
+footer .cols .links-col a:hover {
+  color: var(--secondary);
 }
 
 .container {
