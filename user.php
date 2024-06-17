@@ -50,6 +50,7 @@ $result = $mysqli->query("SELECT * FROM users WHERE id = $user_id");
     <div class="container">
         <a href="history.php"><button>CSV</button></a>
     </div>
+    <?php include "layout/footer.php" ?>
     <script src="assets/script.js"></script>
 </body>
 

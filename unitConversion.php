@@ -36,6 +36,7 @@ session_check();
       <h4>Temperature Conversion</h4>
     </a>
   </div>
+  <?php include "layout/footer.php" ?>
   <script src="assets/script.js"></script>
 </body>
 

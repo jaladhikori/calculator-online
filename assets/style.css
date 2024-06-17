@@ -104,9 +104,15 @@ nav .menu-right li .logout .bx:hover {
   color: var(--secondary);
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+}
+
 footer {
   background: var(--dark);
   padding: 50px 65px;
+  margin-top: 40px;
 }
 
 footer .cols {

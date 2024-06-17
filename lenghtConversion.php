@@ -92,7 +92,7 @@ session_check();
             ?>
         </form>
     </div>
-
+    <?php include "layout/footer.php" ?>
     <script src="assets/script.js"></script>
 </body>
 
